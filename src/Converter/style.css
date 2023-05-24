@@ -1,0 +1,57 @@
+.converter {
+    border-radius: 5px;
+    margin: unset;
+    background: white;
+}
+
+.converter__title {
+    text-align: center;
+    width: 300px;
+    margin: 10px auto;
+    font-size: 60px;
+    border-radius: 5px;
+    background: teal;
+    color: white;
+}
+
+.converter__text {
+    width: 184px;
+    display: inline-block;
+    font-size: 18px;
+}
+
+.converter__field {
+    font-size: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 100%;
+    max-width: 325px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.converter__field:hover {
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.converter__field--important:hover {
+    border: 1px solid;
+    cursor: pointer; 
+}
+
+.converter__field--important {
+    font-size: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 100%;
+    max-width: 325px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.converter__field--important:disabled {
+    background: hsl(0, 0%, 95%);
+
+}

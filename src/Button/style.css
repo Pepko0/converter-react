@@ -1,0 +1,23 @@
+.button--aligne {
+    text-align: center;
+    background: none;
+}
+
+.button {
+    text-align: center;
+    width: 372px;
+    margin: 5px auto;
+    border: 1px solid teal;
+    background: #9ac7c7;
+    border-radius: 5px;
+    font-size: 25px;
+    height: 60px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: teal;
+    color: white;
+    cursor:pointer;
+    
+}
