@@ -1,11 +1,14 @@
+import "./style.css"
+
 
 const Result = ({ result }) => {
 
     return (
         <p>
-            <label>
-                <span className="converter__text">Otrzymasz:</span>
-                <p>
+            <label className="result__box">
+                <span className="result__title">Otrzymasz:</span>
+                <span className="result">
+                 
                     {result !== undefined && (
                         <>
                         {result.sourceAmount.toFixed(2)} PLN = 
@@ -14,7 +17,8 @@ const Result = ({ result }) => {
 
                         </>
                     )}
-                </p>
+                    
+                    </span>
                 
 
             </label>

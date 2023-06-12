@@ -8,8 +8,8 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: #eee;
-  background-size: 630px;
+  background-image: url("../public/background.jpg");
+  background-size: 430px;
   background-position: center;
   background-repeat: inherit;
 }

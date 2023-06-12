@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { currencies } from "../curriences";
 import Result  from "./Result";
+import "./style.css";
+
 
 const Form = ({ result, calculateResult }) => {
 
@@ -17,7 +19,7 @@ const Form = ({ result, calculateResult }) => {
 
   return (
 
-    <form className="form" onSubmit={onSubmit}>
+    <form className="converter__form" onSubmit={onSubmit}>
       <fieldset className="converter">
         <legend className="converter__title">Kantor</legend>
 
@@ -65,10 +67,9 @@ const Form = ({ result, calculateResult }) => {
 
       </fieldset>
 
-      <div className="button--aligne" >
+      <div className="converter__button--aligne" >
         <p>
-          <button className="button">Przelicz</button>
-          <button className="button" type="reset">Wyczyść formularz</button>
+          <button className="converter__button">Przelicz</button>
         </p>
       </div>
     </form>

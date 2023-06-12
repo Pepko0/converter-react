@@ -4,6 +4,8 @@ import { currencies } from "./curriences";
 
 
 
+
+
 function App() {
 
   const [result, setResult] = useState();
@@ -25,6 +27,7 @@ function App() {
 
   return (
 
+   
     <Form
     result={result}
     calculateResult={calculateResult}
