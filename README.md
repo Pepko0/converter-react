@@ -1,25 +1,22 @@
-# Hello This is my " To Do List"
-## [To do List - link to page](https://pepko0.github.io/To-Do-List)
----
-## My name is Kacper
-I creted webiste wher You can add new task and change their status 
+# Cantor
+ ## **Hi!** I am **Kacper** and this is my **cantor!** 
+![cantor](images/cantor.bmp)
+## On this page You can check How much will you have:
+- USD
+- EUR
+- GBP
+- JPY
 
-## I used: 
-* *Java Script*
-* *CSS* 
-* *HTML* 
-* *Grid* 
-* *Git* 
+## Exchange rate: 
+```Java Script
+const USD = 4.48;
+const EUR = 4.74;
+const GBP = 5.35;
+const JPY = 0.033;
+```
+### **Everything is calculated for the amount given in PLN**
 
-## Website **Operation** and **Design**
-[![Animation.gif](https://i.postimg.cc/05cNPprR/Animation.gif)](https://postimg.cc/K43b53nJ)
-
-
-
-## The appearance of the **_Social Media_** page
-[![social-Media.png](https://i.postimg.cc/ZYGdvG6F/social-Media.png)](https://postimg.cc/LhVXr0Cn)
-
-
-## I **invite You** to visit my page
-### Link: https://pepko0.github.io/To-Do-List
-version: beta 
+## This is how look website on the social media:
+![social](images/social.bmp)
+## Link to my website: https://pepko0.github.io/Cantor/
+version: **beta**
