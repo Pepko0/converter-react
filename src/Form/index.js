@@ -3,19 +3,15 @@ import { currencies } from "../curriences";
 import Result  from "./Result";
 import "./style.css";
 
-
 const Form = ({ result, calculateResult }) => {
 
-  const [currency, setCurrency] = useState(currencies[0].short);
+  const [currency, setCurrency] = useState(currencies[1].short);
   const [amount, setAmount] = useState("");
-
 
   const onSubmit = (event) => {
     event.preventDefault();
     calculateResult(currency, amount);
   }
-
-
 
   return (
 
@@ -39,7 +35,6 @@ const Form = ({ result, calculateResult }) => {
           <label>
             <span
               className="converter__text"
-
             >
               Wybierz walute
             </span>
@@ -73,8 +68,6 @@ const Form = ({ result, calculateResult }) => {
         </p>
       </div>
     </form>
-
-
-  )
+  );
 }
 export default Form;

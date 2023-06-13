@@ -2,10 +2,6 @@ import { useState } from 'react';
 import Form from "./Form";
 import { currencies } from "./curriences";
 
-
-
-
-
 function App() {
 
   const [result, setResult] = useState();
@@ -23,19 +19,11 @@ function App() {
     });
   };
 
-
-
   return (
-
-   
     <Form
     result={result}
     calculateResult={calculateResult}
     />
-
   );
-
-
 }
-
 export default App;
