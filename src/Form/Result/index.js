@@ -8,7 +8,7 @@ const Result = ({ result }) => {
             <label className="result__box">
                 <span className="result__title">Otrzymasz:</span>
                 <span className="result__number">
-                    {result !== undefined && (
+                    {result && (
                         <>
                             {result.sourceAmount.toFixed(2)} PLN =
 
