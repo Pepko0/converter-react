@@ -2,7 +2,7 @@
  ## **Hi!** I am **Kacper** and this is my **cantor!** 
 # [Converter-React - Link](https://pepko0.github.io/converter-react/)
 
-# Page look
+## Page look
 ![cantor](public/readme1.bmp)
 
 ## I used:
