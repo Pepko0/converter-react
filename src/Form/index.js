@@ -1,37 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { currencies } from "../curriences";
 import Result from "./Result";
+import Timer from "./Timer";
 import "./style.css";
 
 const Form = ({ result, calculateResult }) => {
 
   const [currency, setCurrency] = useState(currencies[1].short);
   const [amount, setAmount] = useState("");
-  const [time, setTime] = useState(new Date());
 
-  const dataName = {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    hour: "numeric",
-    minute: "numeric",
-    second: "numeric",
-  }
+
 
   const onSubmit = (event) => {
     event.preventDefault();
     calculateResult(currency, amount);
   }
-
-  useEffect(() => {
-    const time = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-
-    return () => {
-      clearInterval(time);
-    };
-  }, []);
 
   return (
 
@@ -39,11 +22,7 @@ const Form = ({ result, calculateResult }) => {
       <fieldset className="converter">
         <legend className="converter__title">Kantor</legend>
 
-        <p
-          className="converter__time"
-        >
-          Dziś jest: {time.toLocaleDateString(undefined, dataName)}
-        </p>
+      <Timer />
 
         <p>
           <label>

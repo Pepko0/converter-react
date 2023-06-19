@@ -1,0 +1,14 @@
+.converter__time{
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 20px;
+    font-size: 15px;
+}
+
+@media(max-width: 767px) {
+    .converter__time{
+        font-size: 13px;
+        text-align: center;
+    }
+}
