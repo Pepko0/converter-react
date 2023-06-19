@@ -11,6 +11,7 @@
 - CSS 
 - React 
 - BEM 
+- Flex
 
 ## On this page You can check How much will you have:
 - USD
