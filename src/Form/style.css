@@ -86,7 +86,9 @@
 }
 
 .converter__time{
+    font-family: 'Roboto Mono', monospace;
     display: flex;
     flex-direction: row-reverse;
-    margin-right: 20px
+    margin: 10px;
+    font-size: 18px;
 }

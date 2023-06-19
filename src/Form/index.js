@@ -9,6 +9,15 @@ const Form = ({ result, calculateResult }) => {
   const [amount, setAmount] = useState("");
   const [time, setTime] = useState(new Date());
 
+  const dataName = {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+  }
+
   const onSubmit = (event) => {
     event.preventDefault();
     calculateResult(currency, amount);
@@ -23,15 +32,6 @@ const Form = ({ result, calculateResult }) => {
       clearInterval(time);
     };
   }, []);
-
-  const dataName = {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    hour: "numeric",
-    minute: "numeric",
-    second: "numeric",
-  }
 
   return (
 
