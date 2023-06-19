@@ -83,5 +83,10 @@
     background: teal;
     color: white;
     cursor:pointer;
-    
+}
+
+.converter__time{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 20px
 }
