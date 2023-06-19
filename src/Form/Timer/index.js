@@ -11,25 +11,24 @@ const Timer = () => {
         hour: "numeric",
         minute: "numeric",
         second: "numeric",
-      }    
+    }
 
     useEffect(() => {
         const time = setInterval(() => {
-          setTime(new Date());
+            setTime(new Date());
         }, 1000);
-    
+
         return () => {
-          clearInterval(time);
+            clearInterval(time);
         };
-      }, []);
+    }, []);
 
-
-    return(
+    return (
         <p
-        className="converter__time"
-      >
-        Dziś jest: {time.toLocaleDateString(undefined, formattedDate)}
-      </p>
+            className="time"
+        >
+            Dziś jest: {time.toLocaleDateString(undefined, formattedDate)}
+        </p>
     );
 
 }

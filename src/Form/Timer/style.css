@@ -1,4 +1,4 @@
-.converter__time{
+.time{
     font-family: 'Roboto Mono', monospace;
     display: flex;
     flex-direction: row-reverse;
@@ -7,7 +7,7 @@
 }
 
 @media(max-width: 767px) {
-    .converter__time{
+    .time{
         font-size: 13px;
         text-align: center;
     }
