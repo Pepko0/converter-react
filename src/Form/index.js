@@ -13,16 +13,25 @@ const Form = ({ result, calculateResult }) => {
     event.preventDefault();
     calculateResult(currency, amount);
   }
-  
+
   useEffect(() => {
     const time = setInterval(() => {
       setTime(new Date());
     }, 1000);
-  
+
     return () => {
       clearInterval(time);
     };
   }, []);
+
+  const dataName = {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+  }
 
   return (
 
@@ -33,8 +42,7 @@ const Form = ({ result, calculateResult }) => {
         <p
           className="converter__time"
         >
-          Time:  {time.toDateString()} {time.toLocaleTimeString()}
-
+          Dziś jest: {time.toLocaleDateString(undefined, dataName)}
         </p>
 
         <p>
