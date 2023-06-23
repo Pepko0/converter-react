@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { currencies } from "../curriences";
 import Result from "./Result";
 import Timer from "./Timer";
-import "./style.css";
+// import "./style.css";
+import { Converter, FormBody, Title, Text, Field, FieldInput, Button } from './styled';
 
 const Form = ({ result, calculateResult }) => {
 
@@ -18,19 +19,26 @@ const Form = ({ result, calculateResult }) => {
 
   return (
 
-    <form className="converter__form" onSubmit={onSubmit}>
-      <fieldset className="converter">
-        <legend className="converter__title">Kantor</legend>
+    <FormBody
+      onSubmit={onSubmit}
+    >
+      <Converter>
+        <Title>
+          Kantor
+        </Title>
 
-      <Timer />
+        <Timer />
 
         <p>
           <label>
-            <span title="Pole obowiązkowe!" className="converter__text">Podaj kwotę w PLN* </span>
-            <input
+            <Text
+              title="Pole obowiązkowe!"
+            >
+              Podaj kwotę w PLN*
+            </Text>
+            <FieldInput
               value={amount}
               onChange={({ target }) => setAmount(target.value)}
-              className="converter__field"
               required text="zł"
               type="number"
               min="1" />
@@ -38,13 +46,10 @@ const Form = ({ result, calculateResult }) => {
         </p>
         <p>
           <label>
-            <span
-              className="converter__text"
-            >
+            <Text>
               Wybierz walute
-            </span>
-            <select
-              className="converter__field"
+            </Text>
+            <Field
               value={currency}
               onChange={({ target }) => setCurrency(target.value)}
             >
@@ -56,23 +61,23 @@ const Form = ({ result, calculateResult }) => {
                   {currency.short}
                 </option>
               )))}
-            </select>
+            </Field>
           </label>
         </p>
-        <p className="converter__text">* - Pola obowiązkowe</p>
+        <Text>* - Pola obowiązkowe</Text>
 
         <Result
           result={result}
         />
 
-      </fieldset>
+      </Converter>
 
-      <div className="converter__button--aligne" >
+ 
         <p>
-          <button className="converter__button">Przelicz</button>
+        <Button>Przelicz</Button>
         </p>
-      </div>
-    </form>
+
+    </FormBody>
   );
 }
 export default Form;

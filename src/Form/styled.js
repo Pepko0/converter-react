@@ -1,16 +1,18 @@
-.converter__form {
-    max-width: 750px;
-    margin: 20px auto; 
-    padding: 10px;
-}
+import styled from "styled-components";
 
-.converter {
+export const Converter = styled.fieldset`
     border-radius: 5px;
     margin: unset;
     background: white;
-}
+`;
 
-.converter__title {
+export const FormBody = styled.form`
+    max-width: 750px;
+    margin: 20px auto; 
+    padding: 10px;
+`;
+
+export const Title = styled.legend`
     text-align: center;
     width: 300px;
     margin: 10px auto;
@@ -18,56 +20,45 @@
     border-radius: 5px;
     background: teal;
     color: white;
-}
+`;
 
-.converter__text {
+export const Text = styled.span`
     width: 184px;
     display: inline-block;
     font-size: 18px;
-}
+`;
 
-.converter__field {
+export const Field = styled.select`
     font-size: 20px;
     border: 1px solid #ccc;
     padding: 15px;
     width: 100%;
     max-width: 325px;
     border-radius: 5px;
-    text-align: center;
-}
+    text-align: center; 
 
-.converter__field:hover {
+    &:hover {
     border: 1px solid;
     cursor: pointer;
-}
+    }
+`;
 
-.converter__field--important:hover {
-    border: 1px solid;
-    cursor: pointer; 
-}
-
-.converter__field--important {
+export const FieldInput = styled.input`
     font-size: 20px;
     border: 1px solid #ccc;
     padding: 15px;
     width: 100%;
     max-width: 325px;
     border-radius: 5px;
-    text-align: center;
-    font-weight: bold;
-}
+    text-align: center; 
 
-.converter__field--important:disabled {
-    background: hsl(0, 0%, 95%);
+    &:hover {
+    border: 1px solid;
+    cursor: pointer;
+    }
+`;
 
-}
-
-.converter__button--aligne {
-    text-align: center;
-    background: none;
-}
-
-.converter__button {
+export const Button = styled.button`
     text-align: center;
     width: 100%;
     margin: 5px auto;
@@ -77,25 +68,10 @@
     font-size: 25px;
     height: 60px;
     font-weight: bold;
-}
 
-.converter__button:hover {
+    &:hover {
     background: teal;
     color: white;
     cursor:pointer;
-}
-
-.converter__time{
-    font-family: 'Roboto Mono', monospace;
-    display: flex;
-    flex-direction: row-reverse;
-    margin: 20px;
-    font-size: 15px;
-}
-
-@media(max-width: 767px) {
-    .converter__time{
-        font-size: 13px;
-        text-align: center;
     }
-}
+`;
