@@ -1,27 +1,8 @@
-import { useState, useEffect } from 'react';
 import "./style.css";
+import { useCurrentDate } from './useCurrentDate';
 
 const Timer = () => {
-    const [time, setTime] = useState(new Date());
-
-    const formattedDate = {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-        hour: "numeric",
-        minute: "numeric",
-        second: "numeric",
-    }
-
-    useEffect(() => {
-        const time = setInterval(() => {
-            setTime(new Date());
-        }, 1000);
-
-        return () => {
-            clearInterval(time);
-        };
-    }, []);
+    const {time, formattedDate}  = useCurrentDate()
 
     return (
         <p
@@ -30,7 +11,5 @@ const Timer = () => {
             Dziś jest: {time.toLocaleDateString(undefined, formattedDate)}
         </p>
     );
-
 }
-
 export default Timer;
