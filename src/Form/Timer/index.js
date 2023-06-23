@@ -1,15 +1,14 @@
-import "./style.css";
+import {Time} from "./styled";
 import { useCurrentDate } from './useCurrentDate';
 
 const Timer = () => {
     const {time, formattedDate}  = useCurrentDate()
 
     return (
-        <p
-            className="time"
+        <Time
         >
             Dziś jest: {time.toLocaleDateString(undefined, formattedDate)}
-        </p>
+        </Time>
     );
 }
 export default Timer;
