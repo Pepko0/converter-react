@@ -1,16 +1,27 @@
 import { useState } from 'react';
-import { currencies } from "../curriences";
 import Result from "./Result";
 import Timer from "./Timer";
-// import "./style.css";
 import { Converter, FormBody, Title, Text, Field, FieldInput, Button } from './styled';
+import { useRatesData } from "./useRatesData";
 
-const Form = ({ result, calculateResult }) => {
 
-  const [currency, setCurrency] = useState(currencies[1].short);
+
+const Form = () => {
+
+  const [currency, setCurrency] = useState("");
   const [amount, setAmount] = useState("");
+  const [result, setResult] = useState(null);
+  const ratesData = useRatesData();
 
+  const calculateResult = (currency, amount) => {
+    const rate = ratesData.rates[currency];
 
+    setResult({
+      sourceAmount: +amount,
+      targetAmount: amount * rate,
+      currency,
+    });
+  };
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -28,7 +39,6 @@ const Form = ({ result, calculateResult }) => {
         </Title>
 
         <Timer />
-
         <p>
           <label>
             <Text
@@ -53,12 +63,12 @@ const Form = ({ result, calculateResult }) => {
               value={currency}
               onChange={({ target }) => setCurrency(target.value)}
             >
-              {currencies.map((currency => (
+              {!!ratesData.rates && Object.keys(ratesData.rates).map((currency => (
                 <option
-                  key={currency.short}
-                  value={currency.short}
+                  key={currency}
+                  value={currency}
                 >
-                  {currency.short}
+                  {currency}
                 </option>
               )))}
             </Field>
@@ -72,10 +82,9 @@ const Form = ({ result, calculateResult }) => {
 
       </Converter>
 
- 
-        <p>
+      <p>
         <Button>Przelicz</Button>
-        </p>
+      </p>
 
     </FormBody>
   );
