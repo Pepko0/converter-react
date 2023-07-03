@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Result from "./Result";
 import Timer from "./Timer";
-import { Converter, FormBody, Title, Text, Field, FieldInput, Button } from './styled';
+import { Converter, FormBody, Title, Text, Field, FieldInput, Button, Loading, Error } from './styled';
 import { useRatesData } from "./useRatesData";
 
 
@@ -28,6 +28,10 @@ const Form = () => {
     calculateResult(currency, amount);
   }
 
+  const currencyDate = ratesData.date
+
+
+
   return (
 
     <FormBody
@@ -38,55 +42,80 @@ const Form = () => {
           Kantor
         </Title>
 
-        <Timer />
-        <p>
-          <label>
-            <Text
-              title="Pole obowiązkowe!"
-            >
-              Podaj kwotę w PLN*
-            </Text>
-            <FieldInput
-              value={amount}
-              onChange={({ target }) => setAmount(target.value)}
-              required text="zł"
-              type="number"
-              min="1" />
-          </label>
-        </p>
-        <p>
-          <label>
-            <Text>
-              Wybierz walute
-            </Text>
-            <Field
-              value={currency}
-              onChange={({ target }) => setCurrency(target.value)}
-            >
-              {!!ratesData.rates && Object.keys(ratesData.rates).map((currency => (
-                <option
-                  key={currency}
-                  value={currency}
-                >
-                  {currency}
-                </option>
-              )))}
-            </Field>
-          </label>
-        </p>
-        <Text>* - Pola obowiązkowe</Text>
+        
+        {ratesData.status === "loading" ? (
+          <>
+            <Loading>
+              Jeszcze chwilka, Pobieramy aktualne stawki walut na dzisiejszy dzień
+            </Loading>
+          </>
 
-        <Result
-          result={result}
-        />
+        ) : (
+          ratesData.status === "error" ? (
+            <Error>
+              Coś posżło nie tak
+            </Error>
 
+          ) : (
+            <>
+            <Timer />
+              <p>
+                <label>
+                  <Text
+                    title="Pole obowiązkowe!"
+                  >
+                    Podaj kwotę w PLN*
+                  </Text>
+                  <FieldInput
+                    value={amount}
+                    onChange={({ target }) => setAmount(target.value)}
+                    required text="zł"
+                    type="number"
+                    min="1" />
+                </label>
+              </p>
+              <p>
+                <label>
+                  <Text>
+                    Wybierz walute
+                  </Text>
+                  <Field
+                    value={currency}
+                    onChange={({ target }) => setCurrency(target.value)}
+                  >
+                    {!!ratesData.rates && Object.keys(ratesData.rates).map((currency => (
+                      <option
+                        key={currency}
+                        value={currency}
+                      >
+                        {currency}
+                      </option>
+                    )))}
+                  </Field>
+                </label>
+              </p>
+
+              <Text>* - Pola obowiązkowe</Text>
+
+              <Result
+                result={result}
+              />
+
+              <Button>Przelicz</Button>
+
+              <p>
+                Kursy walut pobrane są z Europejskiego Banku centralnego.
+                Aktualne na dzień: {currencyDate}
+              </p>
+            </>
+
+          )
+        )
+        }
       </Converter>
-
-      <p>
-        <Button>Przelicz</Button>
-      </p>
-
+      
     </FormBody>
   );
 }
+
 export default Form;

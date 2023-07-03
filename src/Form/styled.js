@@ -75,3 +75,11 @@ export const Button = styled.button`
     cursor:pointer;
     }
 `;
+
+export const Loading = styled.p`
+    font-size: 20px;
+`;
+
+export const Error = styled.p`
+    font-size: 20px;
+`;

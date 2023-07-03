@@ -11,12 +11,12 @@ export const useRatesData = () => {
         const axiosRates = async () => {
             try {
                 const response = await axios.get("https://api.exchangerate.host/latest?base=PLN");
-                const { rates, data } = response.data;
+                const { rates, date } = response.data;
 
                 setRatesData({
                     status: "success",
                     rates,
-                    data,
+                    date,
                 });
 
             } catch {
