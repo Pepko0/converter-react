@@ -6,9 +6,4 @@ export const Time = styled.p`
     flex-direction: row-reverse;
     margin: 20px;
     font-size: 18px;
-
-    @media(max-width: 767px) {
-        font-size: 13px;
-        text-align: center;
-    }
 `;
