@@ -4,10 +4,11 @@ export const Converter = styled.fieldset`
     border-radius: 5px;
     margin: unset;
     background: white;
+    padding: 20px;
 `;
 
 export const FormBody = styled.form`
-    max-width: 750px;
+    max-width: 950px;
     margin: 20px auto; 
     padding: 10px;
 `;
@@ -23,19 +24,15 @@ export const Title = styled.legend`
 `;
 
 export const Text = styled.span`
-    width: 184px;
-    display: inline-block;
-    font-size: 18px;
+    font-size: 20px;    
 `;
 
 export const Field = styled.select`
     font-size: 20px;
     border: 1px solid #ccc;
+    width: 350px;
     padding: 15px;
-    width: 100%;
-    max-width: 325px;
     border-radius: 5px;
-    text-align: center; 
 
     &:hover {
     border: 1px solid;
@@ -47,10 +44,9 @@ export const FieldInput = styled.input`
     font-size: 20px;
     border: 1px solid #ccc;
     padding: 15px;
-    width: 100%;
-    max-width: 325px;
     border-radius: 5px;
-    text-align: center; 
+    width: 350px;
+    margin-left: 10px;
 
     &:hover {
     border: 1px solid;
@@ -77,9 +73,37 @@ export const Button = styled.button`
 `;
 
 export const Loading = styled.p`
-    font-size: 20px;
+    font-size: 26px;
+    color: teal;
+    text-align: center;
+    font-weight: bold;
 `;
 
 export const Error = styled.p`
     font-size: 20px;
+    color: crimson;
+    text-align: center;
+`;
+
+export const Footer = styled.p `
+    text-align: center;
+    font-size: 20px;
+    
+`;
+
+export const Container = styled.div`
+    /* border: solid 1px; */
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    ;
+
+`;
+
+export const SelectionContainer = styled.div`
+    padding:0 105px;
+
+    @media(max-width: 767px){
+        padding: 0;
+    }
 `;

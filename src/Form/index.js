@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Result from "./Result";
 import Timer from "./Timer";
-import { Converter, FormBody, Title, Text, Field, FieldInput, Button, Loading, Error } from './styled';
+import { Converter, FormBody, Title, Text, Field, FieldInput, Button, Loading, Error, Footer, SelectionContainer, Container } from './styled';
 import { useRatesData } from "./useRatesData";
 
 
@@ -42,7 +42,7 @@ const Form = () => {
           Kantor
         </Title>
 
-        
+
         {ratesData.status === "loading" ? (
           <>
             <Loading>
@@ -58,62 +58,58 @@ const Form = () => {
 
           ) : (
             <>
-            <Timer />
-              <p>
-                <label>
-                  <Text
-                    title="Pole obowiązkowe!"
-                  >
-                    Podaj kwotę w PLN*
-                  </Text>
-                  <FieldInput
-                    value={amount}
-                    onChange={({ target }) => setAmount(target.value)}
-                    required text="zł"
-                    type="number"
-                    min="1" />
-                </label>
-              </p>
-              <p>
-                <label>
-                  <Text>
-                    Wybierz walute
-                  </Text>
-                  <Field
-                    value={currency}
-                    onChange={({ target }) => setCurrency(target.value)}
-                  >
-                    {!!ratesData.rates && Object.keys(ratesData.rates).map((currency => (
-                      <option
-                        key={currency}
-                        value={currency}
-                      >
-                        {currency}
-                      </option>
-                    )))}
-                  </Field>
-                </label>
-              </p>
+              <Timer />
+              <SelectionContainer>
+                  <Container>
+                    <Text
+                      title="Pole obowiązkowe!"
+                    >
+                      Podaj kwotę w PLN*
+                    </Text>
+                    <FieldInput
+                      value={amount}
+                      onChange={({ target }) => setAmount(target.value)}
+                      required text="zł"
+                      type="number"
+                      min="1" />
+                  </Container>
+                  <Container>
+                    <Text>
+                      Wybierz walute
+                    </Text>
+                    <Field
+                      value={currency}
+                      onChange={({ target }) => setCurrency(target.value)}
+                    >
+                      {!!ratesData.rates && Object.keys(ratesData.rates).map((currency => (
+                        <option
+                          key={currency}
+                          value={currency}
+                        >
+                          {currency}
+                        </option>
+                      )))}
+                    </Field>
+                    </Container>
 
-              <Text>* - Pola obowiązkowe</Text>
+                <Text>* - Pola obowiązkowe</Text>
 
-              <Result
-                result={result}
-              />
-
+                <Result
+                  result={result}
+                />
+              </SelectionContainer>
               <Button>Przelicz</Button>
 
-              <p>
-                Kursy walut pobrane są z Europejskiego Banku centralnego.
-                Aktualne na dzień: {currencyDate}
-              </p>
+              <Footer>
+                Kursy walut aktualny na dzień<b> {currencyDate}</b>
+              </Footer>
             </>
 
           )
         )
         }
       </Converter>
-      
+
     </FormBody>
   );
 }
