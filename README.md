@@ -10,23 +10,18 @@
 - HTML 
 - CSS 
 - React 
-- BEM 
+- useEffect
+- useState
+- Grid
 - Flex
+- API
 
-## On this page You can check How much will you have:
-- USD
-- EUR
-- GBP
-- JPY
+## On this page You can check calculate how much money you will get from PLN
 
-## Exchange rate: 
-```Java Script
-const USD = 4.24;
-const EUR = 4.53;
-const GBP = 5.27;
-const JPY = 0.03;
-```
-### **Everything is calculated for the amount given in PLN**
+## Exchange rate is current as of the day 
+
+## On this page is Timer with current Time 
+
 
 ## This is how look website on the social media:
 ![social](public/readme2.bmp)
