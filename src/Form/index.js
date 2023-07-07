@@ -100,7 +100,7 @@ const Form = () => {
               <Button>Przelicz</Button>
 
               <Footer>
-                Kursy walut aktualny na dzień<b> {currencyDate}</b>
+                Kursy walut aktualny na dzień:<b> {currencyDate}</b>
               </Footer>
             </>
 
