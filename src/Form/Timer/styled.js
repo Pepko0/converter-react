@@ -7,7 +7,7 @@ export const Time = styled.p`
     margin: 20px;
     font-size: 18px;
 
-    @media(max-width: 767px) {
+    @media(max-width: ${({theme}) => theme.breakpoint.mobileMax}px) {
         font-size: 15px;
         margin-bottom: 40px;
         text-align: center;

@@ -20,9 +20,9 @@ export const Title = styled.legend`
     font-size: 60px;
     border-radius: 5px;
     background: teal;
-    color: ${({theme}) => theme.color.white};;
+    color: ${({theme}) => theme.color.white};
 
-    @media(max-width: 767px) {
+    @media(max-width: ${({theme}) => theme.breakpoint.mobileMax}px) {
         font-size: 50px;
         width: 200px
     }
@@ -31,7 +31,7 @@ export const Title = styled.legend`
 export const Text = styled.span`
     font-size: 20px;   
     
-    @media(max-width: 767px) {
+    @media(max-width: ${({theme}) => theme.breakpoint.mobileMax}px) {
         font-size: 20px;
     }
 `;
@@ -48,7 +48,7 @@ export const Field = styled.select`
     cursor: pointer;
     }
 
-    @media(max-width: 859px) {
+    @media(max-width: ${({theme}) => theme.breakpoint.inputMax}px) {
         width: 100%;
         margin-top: 20px;
     }
@@ -87,21 +87,21 @@ export const Button = styled.button`
 
     &:hover {
     background: teal;
-    color: white;
+    color: ${({theme}) => theme.color.white};
     cursor:pointer;
     }
 `;
 
 export const Loading = styled.p`
     font-size: 26px;
-    color: teal;
+    color: ${({theme}) => theme.color.teal};
     text-align: center;
     font-weight: bold;
 `;
 
 export const Error = styled.p`
     font-size: 26px;
-    color: crimson;
+    color: ${({theme}) => theme.color.crimson};
     text-align: center;
 `;
 
@@ -109,13 +109,12 @@ export const Footer = styled.p `
     text-align: center;
     font-size: 20px;
     
-    @media(max-width: 767px) {
+    @media(max-width: ${({theme}) => theme.breakpoint.mobileMax}px) {
         font-size: 15px;
     }
 `;
 
 export const Container = styled.div`
-    /* border: solid 1px; */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -126,7 +125,7 @@ export const Container = styled.div`
 export const SelectionContainer = styled.div`
     padding: 0 105px;
 
-    @media(max-width: 859px){
+    @media(max-width: ${({theme}) => theme.breakpoint.inputMax}px){
         padding: 0;
     }
 `;
