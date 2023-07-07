@@ -8,7 +8,7 @@ import { useRatesData } from "./useRatesData";
 
 const Form = () => {
 
-  const [currency, setCurrency] = useState(null);
+  const [currency, setCurrency] = useState("");
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState(null);
   const ratesData = useRatesData();
@@ -29,7 +29,6 @@ const Form = () => {
   }
 
   const currencyDate = ratesData.date
-
 
 
   return (
@@ -60,37 +59,37 @@ const Form = () => {
             <>
               <Timer />
               <SelectionContainer>
-                  <Container>
-                    <Text
-                      title="Pole obowiązkowe!"
-                    >
-                      Podaj kwotę w PLN*
-                    </Text>
-                    <FieldInput
-                      value={amount}
-                      onChange={({ target }) => setAmount(target.value)}
-                      required text="zł"
-                      type="number"
-                      min="1" />
-                  </Container>
-                  <Container>
-                    <Text>
-                      Wybierz walute
-                    </Text>
-                    <Field
-                      value={currency}
-                      onChange={({ target }) => setCurrency(target.value)}
-                    >
-                      {!!ratesData.rates && Object.keys(ratesData.rates).map((currency => (
-                        <option
-                          key={currency}
-                          value={currency}
-                        >
-                          {currency}
-                        </option>
-                      )))}
-                    </Field>
-                    </Container>
+                <Container>
+                  <Text
+                    title="Pole obowiązkowe!"
+                  >
+                    Podaj kwotę w PLN*
+                  </Text>
+                  <FieldInput
+                    value={amount}
+                    onChange={({ target }) => setAmount(target.value)}
+                    required text="zł"
+                    type="number"
+                    min="1" />
+                </Container>
+                <Container>
+                  <Text>
+                    Wybierz walute
+                  </Text>
+                  <Field
+                    value={currency}
+                    onChange={({ target }) => setCurrency(target.value)}
+                  >
+                    {!!ratesData.rates && Object.keys(ratesData.rates).map((currency => (
+                      <option
+                        key={currency}
+                        value={currency}
+                      >
+                        {currency}
+                      </option>
+                    )))}
+                  </Field>
+                </Container>
 
                 <Text>* - Pola obowiązkowe</Text>
 

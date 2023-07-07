@@ -20,7 +20,7 @@ export const Title = styled.legend`
     font-size: 60px;
     border-radius: 5px;
     background: teal;
-    color: white;
+    color: ${({theme}) => theme.color.white};;
 
     @media(max-width: 767px) {
         font-size: 50px;
