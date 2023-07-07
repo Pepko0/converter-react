@@ -1,4 +1,4 @@
-import {Box, Title, Numbers} from "./styled.js";
+import { Box, Title, Numbers } from "./styled.js";
 
 
 const Result = ({ result }) => {
@@ -10,10 +10,10 @@ const Result = ({ result }) => {
                 <Numbers>
                     {result && (
                         <>
-                            {result.sourceAmount.toFixed(2)} PLN = 
-
-                            {result.targetAmount.toFixed(2)}{ result.currency}
-
+                            {result.sourceAmount.toFixed(2)} PLN =&nbsp;
+                            <strong>
+                                {result.targetAmount.toFixed(2)}&nbsp;{result.currency}
+                            </strong>
                         </>
                     )}
                 </Numbers>

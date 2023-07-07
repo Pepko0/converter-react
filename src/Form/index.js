@@ -8,7 +8,7 @@ import { useRatesData } from "./useRatesData";
 
 const Form = () => {
 
-  const [currency, setCurrency] = useState("");
+  const [currency, setCurrency] = useState(null);
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState(null);
   const ratesData = useRatesData();
@@ -53,7 +53,7 @@ const Form = () => {
         ) : (
           ratesData.status === "error" ? (
             <Error>
-              Coś posżło nie tak
+              Coś posżło nie tak... Sprwadź połączenie z internetem! Jeśli wszystko jes podłączone... Pracujemy nad poprawą błędu! Zajrzyj do nas za chwilę ;D
             </Error>
 
           ) : (
