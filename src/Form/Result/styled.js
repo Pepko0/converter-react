@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Box = styled.label`
     display: grid;
     grid-template-columns: auto;
+    height: 100px;
 `;
 
 export const Title = styled.span`
