@@ -16,7 +16,7 @@ export const useCurrentDate = () => {
         const time = setInterval(() => {
             setTime(new Date());
         }, 1000);
-
+        
         return () => {
             clearInterval(time);
         };

@@ -40,21 +40,17 @@ const Form = () => {
         <Title>
           Kantor
         </Title>
-
-
         {ratesData.status === "loading" ? (
           <>
             <Loading>
               Jeszcze chwilka, Pobieramy aktualne stawki walut na dzisiejszy dzień
             </Loading>
           </>
-
         ) : (
           ratesData.status === "error" ? (
             <Error>
               Coś posżło nie tak... Sprwadź połączenie z internetem! Jeśli wszystko jes podłączone... Pracujemy nad poprawą błędu! Zajrzyj do nas za chwilę ;D
             </Error>
-
           ) : (
             <>
               <Timer />
@@ -90,25 +86,20 @@ const Form = () => {
                     )))}
                   </Field>
                 </Container>
-
                 <Text>* - Pola obowiązkowe</Text>
-
                 <Result
                   result={result}
                 />
               </SelectionContainer>
               <Button>Przelicz</Button>
-
               <Footer>
                 Kursy walut aktualny na dzień:<b> {currencyDate}</b>
               </Footer>
             </>
-
           )
         )
         }
       </Converter>
-
     </FormBody>
   );
 }

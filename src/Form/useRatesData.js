@@ -19,7 +19,6 @@ export const useRatesData = () => {
                     rates,
                     date,
                 });
-
             } catch {
                 setRatesData({
                     status: "error",
